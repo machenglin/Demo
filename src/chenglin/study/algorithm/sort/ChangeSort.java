@@ -9,23 +9,14 @@ public class ChangeSort {
     /**
      * 冒泡排序
      */
-    private void bubbleSortDesc(Integer[] arr) {
+    public static void bubbleSortDesc(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] < arr[j]) {
-                    swap(arr, i, j);
+                    SortUtils.swap(arr, i, j);
                 }
             }
         }
-    }
-
-    /**
-     * 交换数组元素
-     */
-    private void swap(Integer[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
     }
 
     /**
@@ -35,7 +26,7 @@ public class ChangeSort {
      * 2、分区过程，把比基准数X小的放在左边，比基准数X大的放在右边。
      * 3、再对左右区间重复第二步，直到各区间只有一个数。
      */
-    private void quickSortDesc(Integer[] arr, int left, int right) {
+    public static void quickSortDesc(int[] arr, int left, int right) {
         if (left < right) {
             int i = left, j = right, x = arr[left];
             while (i < j) {
